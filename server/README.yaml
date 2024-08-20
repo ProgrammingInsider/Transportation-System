@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+  title: Transportation System API
+  version: 1.0.0
+servers:
+  - url: https://lighte-ticket.et/api/v1/transportation_system/
+paths:
+  /vehicles:
+    get:
+      summary: Retrieve a list of vehicles
+      responses:
+        '200':
+          description: A list of vehicles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: The vehicle ID
+                    name:
+                      type: string
+                      description: The name of the vehicle
+    post:
+      summary: Create a new vehicle
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The name of the new vehicle
+      responses:
+        '201':
+          description: The newly created vehicle
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The ID of the newly created vehicle
+                  name:
+                    type: string
+                    description: The name of the vehicle
+
+# Add similar definitions for other endpoints (e.g., /routes, /stations)

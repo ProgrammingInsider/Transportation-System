@@ -1,0 +1,87 @@
+/* DASHBOARD */
+.mainSection{
+    width: 95%;
+    margin: auto;
+    margin-top: 2em;
+    min-height: 100vh;
+  }
+  
+  .DepartureContainer{
+    /* height: 40px; */
+    margin-bottom: 1rem;
+    padding-left: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .DepartureName{
+    border: 1px solid var(--gray-600);
+    padding: .2em .5em;
+    border-radius: 5px;
+    background-color: var(--gray-200);
+    margin-right: 1em;
+    margin-bottom: 1em;
+    cursor: pointer;
+  }
+
+  .totalAnalytics{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+  }
+  .tripDashboard,.passengerDashboard, .vehicleDashboard, .employeeDashboard{
+      height: 250px;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .tripDashboard{
+    background-image: var(--card-colorGradient1);
+  }
+  
+  .passengerDashboard{
+    background-image: var(--card-colorGradient2);
+  }
+  
+  .vehicleDashboard{
+    background-image: var(--card-colorGradient3);
+  }
+  
+  .employeeDashboard{
+    background-image: var(--card-colorGradient4);
+  }
+  
+  .dashboardCardIconContainer,.dashboardCardText{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+  }
+  
+  .dashboardCardIcon{
+    font-size: 4rem;
+  }
+  
+  .dashboardCardText{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .dashboardName{
+    width: 100%;
+    font-size: 1.3rem;
+  }
+  
+  .dashboardNumber{
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
