@@ -285,8 +285,7 @@ const addTripReport = async(res,Departure_Name,Seat_Number) => {
         res.json({isRegistered:true,Message:"Trip Registered Successfully"}) 
     }else{
         const insertSql = `INSERT INTO report (Total_Trip,Total_Passenger,Departure_Name) VALUES (${1}, ${Seat_Number},"${Departure_Name}")`
-
-            const postResult = await postDb(insertSql);
+        await postDb(insertSql);
             
         res.json({isRegistered:true,Message:"Trip Registered Successfully"}) 
     }
