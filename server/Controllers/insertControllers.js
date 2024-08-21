@@ -369,14 +369,15 @@ export const addCheckIn = async(req,res)=>{
 
 // DAILY REPORT
 export const addDailyReport = async(req,res) => {
-    const {Agent_Name, Service_Charge,Departure} = req.body
+    const {Agent_Name, Service_Charge,Departure,Report_Date,totalRevenue} = req.body
 
-    if(!Agent_Name || !Service_Charge  || !Departure){
+    if(!Agent_Name || !Service_Charge  || !Departure || !Report_Date || !totalRevenue){
         throw new BadRequestError("Please Provide all require information")
     }
 
     //INSERT DAILY RPORT
-    const insertSql = `INSERT INTO dailyreport (Agent_Name,Service_Charge,Departure)  VALUES("${Agent_Name}",${Service_Charge},"${Departure}")`
+    const insertSql = `INSERT INTO dailyreport (Agent_Name,Service_Charge,Departure,Report_Date,totalRevenue)  VALUES("${Agent_Name}",${Service_Charge},"${Departure}","${Report_Date}",${totalRevenue})`
+
     await postDb(insertSql);
 
     res.json({success:true, message:"Daily Revenue Report in Reported Successfully"})

@@ -100,21 +100,22 @@ export const reportTable = (con) => {
 //     })
 // }
 
-// export const dailyReport = (con) => {
-//     const sql = `CREATE TABLE dailyreport ( 
-//         Id INT AUTO_INCREMENT PRIMARY KEY,
-//          Agent_Name VARCHAR(255) NOT NULL, 
-//          Service_Charge DECIMAL(65,2) NOT NULL,
-//          Departure VARCHAR(255) NOT NULL,
-//          Report_Date DATETIME  NOT NULL DEFAULT NOW(),
-//          FOREIGN KEY(Departure) REFERENCES departuretown(Departure_Name)         
-//          );`
+export const dailyReport = (con) => {
+    const sql = `CREATE TABLE dailyreport ( 
+        Id INT AUTO_INCREMENT PRIMARY KEY,
+        Agent_Name VARCHAR(255) NOT NULL, 
+        Service_Charge DECIMAL(65,2) NOT NULL,
+        Departure VARCHAR(255) NOT NULL,
+        Report_Date VARCHAR(255) NOT NULL,
+        totalRevenue DECIMAL(65,2) NOT NULL,
+        FOREIGN KEY(Departure) REFERENCES departuretown(Departure_Name)         
+        );`
 
-//     con.query(sql,(err,result)=>{
-//         if (err) throw err
-//         console.log("Daily Report table created");
-//     })   
-// }
+    con.query(sql,(err,result)=>{
+        if (err) throw err
+        console.log("Daily Report table created");
+    })   
+}
 
 
 // CREATE NEW TRIP TABLE
