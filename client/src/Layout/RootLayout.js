@@ -92,7 +92,6 @@ const RootLayout = () => {
 
                         
                     </div>
-                   
                     {
                         (subIndex === 1 && !hideSideBar) && (
                             <div className="subMenu">
@@ -334,16 +333,12 @@ const RootLayout = () => {
                             <article className="menuName">Report</article>
                             <IoIosArrowDown className={subIndex === 8?"showDropDown dropDown":"dropDown"}/>
                         </>}
-                       
                     </div>
-                   
+
                     {
                         (subIndex === 8 && !hideSideBar) && (
                             <div className="subMenu">
-                                {
-                                    (position === 1) && (
-
-                                        <NavLink 
+                                    <NavLink 
                                         style={({isActive})=>{
                                             return {backgroundColor: isActive? "#42d35a": ""}
                                         }} 
@@ -351,19 +346,20 @@ const RootLayout = () => {
                                         className="mainMenu link"
                                         >
                                             Download Report
-                                       
-                                        
+                                    </NavLink>
+                                {
+                                    (position === 1) && (
+                                        <NavLink
+                                        style={({isActive})=>{
+                                            return {backgroundColor: isActive? "#42d35a": ""}
+                                        }}  
+                                        to={"report/dailyreport"} className="mainMenu link">
+                                            Daily Report
                                         </NavLink>
                                     )
                                 }
 
-                                <NavLink
-                                style={({isActive})=>{
-                                    return {backgroundColor: isActive? "#42d35a": ""}
-                                }}  
-                                to={"report/dailyreport"} className="mainMenu link">
-                                    Daily Report
-                                </NavLink>
+                                
                             </div>
                         )
                     }
