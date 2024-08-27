@@ -345,7 +345,7 @@ const RootLayout = () => {
                                         to={"/report/downloadreport"} 
                                         className="mainMenu link"
                                         >
-                                            Download Report
+                                            Get Trip Report
                                     </NavLink>
                                 {
                                     (position === 1) && (
