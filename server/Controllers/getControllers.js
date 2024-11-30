@@ -282,4 +282,10 @@ export const getDailyReport = async(req,res) => {
     res.status(200).json({success:true, length:queryResult?.length, result:queryResult});
 }
 
+// Get VEHICLES IN BLACKlIST
+export const getBlacklist = async(req,res) => {
+    const sql = `SELECT * FROM vehicle WHERE Status = 0`
 
+    const queryResult = await queryDb(sql);
+    res.status(200).json({success:true, length:queryResult?.length, result:queryResult});
+}

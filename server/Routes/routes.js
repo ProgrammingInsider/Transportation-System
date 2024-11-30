@@ -5,7 +5,7 @@ const router = express.Router();
 // CONTROLLERS
 import { Login, addDeparture, addFleetType, addArrival, addVehicle, addAgent,addAdmin, addTrip, addCheckIn, addDailyReport } from '../Controllers/insertControllers.js';
 
-import { getAdmin, getDeparture, getFleetType,getVehicle,getAgent, getReport, getSingleVehicle, getDistinctArrival, getProfile, getAllArrival, getTrip, refresh, logout, getCheckIn, getPlateNumber, getDailyReport } from '../Controllers/getControllers.js';
+import { getAdmin, getDeparture, getFleetType,getVehicle,getAgent, getReport, getSingleVehicle, getDistinctArrival, getProfile, getAllArrival, getTrip, refresh, logout, getCheckIn, getPlateNumber, getDailyReport, getBlacklist } from '../Controllers/getControllers.js';
 
 import { updateVehicle, updateAgent, updateArrivalLocation, updateAdmin, updateCheckedOut, resetQueue } from '../Controllers/updateControllers.js';
 
@@ -47,6 +47,8 @@ router.route('/profile').get(profileAuth,getProfile)
 router.route('/checkin/search').get(profileAuth,getCheckIn)
 router.route('/platenumbers').get(profileAuth,getPlateNumber)
 router.route('/dailyreport').get(getDailyReport)
+router.route('/blacklist').get(getBlacklist)
+
 
 
 

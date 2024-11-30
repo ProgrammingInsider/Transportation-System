@@ -24,6 +24,7 @@ import errorHandlerMiddleware from "./middleware/error-handling.js";
 import {profileAuth} from './middleware/Auth.js'
 import corsOptions from './Config/corsOptions.js';
 import credentials from './middleware/credentials.js';
+import { banVehicle } from './utils/cronJobs.js';
 
 // Handle options credentials check - before CORS!
 // and fetch cookies credentials requirement
@@ -42,6 +43,8 @@ Db_connection()
 app.use(express.json()); 
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser());
+
+banVehicle.start();
 
 app.set('trust proxy',1) //TO enable if we are behind a reverse proxy to use rate Limiter
 

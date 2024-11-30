@@ -1,6 +1,7 @@
 import con from "../Db/connection.js";
 
 export const postDb = async (sql) => {
+    
     try{
         
         const resp = await new Promise((resolve,reject)=>{
@@ -16,7 +17,7 @@ export const postDb = async (sql) => {
         return resp
 
     }catch(error){
-       
+
         throw new error
     }
 }

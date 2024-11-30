@@ -11,11 +11,11 @@ export const profileAuth = (req,res,next) => {
     if(!authHeader && !authHeader?.startsWith('Bearer')){
          throw new UnauthenticatedError("No token Provided");
     }else{
-      
+     
      try{
      
           const token = authHeader.split(' ')[1];
-         
+
              const decode = jwt.verify(token,process.env.ACCESS_TOKEN_SECRET)
              const {Email, First_Name, Last_Name, Position} = decode;
 
